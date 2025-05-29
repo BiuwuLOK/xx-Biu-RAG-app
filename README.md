@@ -1,4 +1,4 @@
-# xx-Biu-RAG-app
+# xx-Biu-reademe-assis
 
 ## 專案簡介
 
