@@ -6,11 +6,11 @@
 
 ## Demo
 
-![[demo](assets/demo-gif-1.gif)]
+![demo](assets/demo-gif-1.gif)
 
 #### How can you ask it
-![[how-to-ask-1](assets/how-to-ask-1.JPG)]
-![[how-to-ask-2](assets/how-to-ask-2.JPG)]
+![how-to-ask-1](assets/how-to-ask-1.jpg)
+![how-to-ask-2](assets/how-to-ask-2.jpg)
 
 ## 專案結構
 
