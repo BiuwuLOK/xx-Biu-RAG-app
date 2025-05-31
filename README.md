@@ -6,11 +6,15 @@
 
 ## Demo
 
-<img src="assets/demo-gif-1.gif" alt="demo" width="600"/>
+<div align="center">
+  <img src="assets/demo-gif-1.gif" alt="demo" width="600"/>
+</div>
 
 #### How can you ask it
-<img src="assets/how-to-ask-1.jpg" alt="how-to-ask-1" width="600"/>
-<img src="assets/how-to-ask-2.jpg" alt="how-to-ask-2" width="600"/>
+<div align="center">
+  <img src="assets/how-to-ask-1.jpg" alt="how-to-ask-1" width="600"/>
+  <img src="assets/how-to-ask-2.jpg" alt="how-to-ask-2" width="600"/>
+</div>
 
 ## 專案結構
 
