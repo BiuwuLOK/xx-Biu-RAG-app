@@ -6,6 +6,8 @@
 
 ## Demo
 
+### Try it out
+[Try The Demo](https://gemini.google.com/share/5c9e937d9566)
 <div align="center">
   <img src="assets/demo-gif-1.gif" alt="demo" width="600"/>
 </div>
