@@ -4,6 +4,14 @@
 
 這是一個基於 Retrieval Augmented Generation (RAG) 的應用程式，支援多後端（FastAPI、Node.js）與 React 前端，並整合 CI/CD 流程。專案採用 monorepo 架構，方便多服務協作與自動化部署。
 
+## Demo
+
+![[demo](assets/demo-gif-1.gif)]
+
+#### How can you ask it
+![[how-to-ask-1](assets/how-to-ask-1.JPG)]
+![[how-to-ask-2](assets/how-to-ask-2.JPG)]
+
 ## 專案結構
 
 ```
