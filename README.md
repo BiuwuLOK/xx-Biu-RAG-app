@@ -1,136 +1,97 @@
-# xx-Biu-reademe-assis
+# xx-Biu-reademe-assis-app (The RAG Readme App)
 
 ## 專案簡介
 
-這是一個基於 Retrieval Augmented Generation (RAG) 的應用程式，旨在幫助使用者根據自己的 GitHub 倉庫內容進行問答。後端使用 Python FastAPI 提供 API 服務，前端使用 React 構建使用者介面。
-
-## 功能特色
-
-- 載入指定 GitHub 使用者的公開倉庫數據。
-- 根據已載入的倉庫內容回答使用者的問題。
-- 清晰的使用者介面展示載入狀態和助手回答。
+這是一個基於 Retrieval Augmented Generation (RAG) 的應用程式，支援多後端（FastAPI、Node.js）與 React 前端，並整合 CI/CD 流程。專案採用 monorepo 架構，方便多服務協作與自動化部署。
 
 ## 專案結構
 
 ```
-xx-Biu-RAG-app/
-├── LICENSE
-├── README.md
-├── backend/              # FastAPI 後端
-│   ├── main.py           # 後端主程式
-│   └── requirements.txt  # 後端依賴
-└── frontend/             # React 前端
-    ├── package.json
-    ├── postcss.config.js
-    ├── tailwind.config.js
-    ├── vite.config.js
-    ├── public/
-    │   └── index.html
-    └── src/
-        ├── App.jsx
-        ├── index.css
-        ├── main.jsx
-        ├── components/       # React 組件
-        │   ├── AppFooter.jsx
-        │   ├── AppHeader.jsx
-        │   ├── AssistantAnswerDisplay.jsx
-        │   ├── GitHubReposLoader.jsx
-        │   ├── index.js
-        │   ├── LoadedReposDisplay.jsx
-        │   ├── MessageBox.jsx
-        │   └── QuestionInput.jsx
-        ├── config/           # 配置檔案
-        │   └── constants.js
-        └── hooks/            # 自定義 React Hooks
-            ├── hooks.js
-            ├── useApp.js
-            ├── useAssistant.js
-            └── useGitHubReposLoader.js
+xx-Biu-reademe-assis-app/
+├── .github/                     # GitHub Actions (CI/CD) 設定
+│   └── workflows/
+│       ├── deploy-react.yml     # 部署 React 前端
+│       ├── deploy-fastapi.yml   # 部署 FastAPI 後端
+│       └── deploy-nodejs.yml    # 部署 Node.js 後端
+├── react/                       # React 前端程式碼
+├── fastapi/                     # FastAPI 後端程式碼
+├── nodejs/                      # Node.js 微服務程式碼
+├── shared/                      # 共用函式/型別（可選）
+├── .gitignore                   # Git 忽略文件
+├── package.json                 # 根層級管理（可用於 Lerna/Nx 等 monorepo 工具）
+├── requirements.txt             # 全域 Python 工具依賴（可選）
+├── .editorconfig                # 編輯器統一設定（建議）
+├── .prettierrc                  # Prettier 設定（建議）
+├── .eslintrc.js                 # ESLint 設定（建議）
+├── .env.example                 # 環境變數範例（建議）
+└── README.md                    # 專案說明文件
 ```
+
+### 各資料夾簡介
+- `.github/workflows/`：CI/CD 自動化部署與測試流程。
+- `react/`：前端 React 專案，建議使用 Vite + Tailwind CSS。
+- `fastapi/`：Python FastAPI 後端服務。
+- `nodejs/`：Node.js 微服務（可多個子服務）。
+- `shared/`：多服務共用的工具、型別或常數（可選）。
 
 ## 環境建置與安裝
 
-請確保您的系統已安裝 Python 3.8+ 和 Node.js。
+請確保您的系統已安裝 Python 3.8+、Node.js 16+。
 
-### 後端設定
+### 前端（React）
+```bash
+cd react
+npm install
+npm run dev
+```
 
-1. 進入 `backend` 目錄：
-   ```bash
-   cd backend
-   ```
-2. 創建並激活虛擬環境（推薦）：
-   ```bash
-   python -m venv venv
-   # Windows
-   .\venv\Scripts\activate
-   # macOS/Linux
-   source venv/bin/activate
-   ```
-3. 安裝後端依賴：
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. **配置 API 金鑰**：
-   後端需要訪問 GitHub API 和一個大型語言模型 (LLM) 的 API（例如 OpenAI）。請在後端環境中設置相應的環境變數或修改配置文件來包含你的 API 金鑰。
-   - GitHub Personal Access Token (需要讀取公開倉庫的權限)
-   - LLM API Key (例如 OpenAI API Key)
+### FastAPI 後端
+```bash
+cd fastapi
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+uvicorn main:app --reload
+```
 
-   具體配置方式請參考後端代碼 (`backend/main.py`) 或相關文檔。
+### Node.js 微服務
+```bash
+cd nodejs
+npm install
+npm run dev # 或 node app.js
+```
 
-### 前端設定
+### 多服務本地啟動建議
+可於根目錄安裝 concurrently，並於 package.json scripts 加入：
+```json
+"scripts": {
+  "dev": "concurrently 'npm --prefix react run dev' 'uvicorn fastapi/main:app --reload' 'npm --prefix nodejs run dev'"
+}
+```
 
-1. 進入 `frontend` 目錄：
-   ```bash
-   cd frontend
-   ```
-2. 安裝前端依賴：
-   ```bash
-   npm install
-   ```
-3. **配置後端 URL**：
-   修改 `frontend/src/config/constants.js` 文件，將 `BACKEND_URL` 設置為你的後端服務地址。
-   ```javascript
-   export const BACKEND_URL = 'http://localhost:8000'; // 根據你的後端實際運行地址修改
-   ```
-
-## 運行應用程式
-
-1. **啟動後端服務**：
-   在 `backend` 目錄下，確保虛擬環境已激活，然後運行：
-   ```bash
-   uvicorn main:app --reload
-   ```
-   後端服務預設運行在 `http://127.0.0.1:8000`。
-
-2. **啟動前端應用**：
-   在 `frontend` 目錄下，運行：
-   ```bash
-   npm run dev
-   ```
-   前端應用預設運行在 `http://localhost:5173` (或 Vite 提示的其他端口)。
-
-打開瀏覽器訪問前端地址，即可使用應用程式。
+## 開發建議與最佳實踐
+- 建議加入 `.editorconfig`、`.prettierrc`、`.eslintrc.js` 統一團隊程式碼風格。
+- 建議於 `shared/` 放置共用工具或型別，減少重複。
+- CI/CD 流程可自動執行 lint、test、build 與部署。
+- 各服務可獨立部署、測試與擴展。
+- 建議於根目錄提供 `.env.example`，統一管理環境變數。
 
 ## 使用技術
-
-- **後端**: Python, FastAPI
 - **前端**: React, Vite, Tailwind CSS
-- **RAG**: (這裡可以補充你使用的 RAG 相關庫或框架，例如 LangChain, LlamaIndex 等)
-- **資料庫/向量儲存**: (如果使用了，請補充)
-- **LLM**: (請補充你使用的具體 LLM，例如 OpenAI GPT 系列)
+- **後端**: Python FastAPI, Node.js (Express/Koa 等)
+- **RAG**: （請補充使用的 RAG 相關庫，如 LangChain, LlamaIndex 等）
+- **資料庫/向量儲存**: （如有請補充）
+- **LLM**: （請補充具體 LLM，如 OpenAI GPT 系列）
 
 ## 貢獻
-
-歡迎對此專案做出貢獻。請先 Fork 本倉庫，創建新的分支，提交你的修改，然後發起 Pull Request。
+歡迎對此專案做出貢獻。請先 Fork 本倉庫，創建新分支，提交修改後發起 Pull Request。
 
 ## 許可證
-
-本專案採用 MIT 許可證 - 詳細內容請參閱 [LICENSE](LICENSE) 文件。
+本專案採用 MIT 許可證 - 詳細內容請參閱 [LICENSE](LICENSE)。
 
 ## 聯繫方式
-
-如果您有任何問題或建議，歡迎聯繫我。
+如有任何問題或建議，歡迎聯繫我。
 
 ---
 
-This README Edited with Gemini!
+> 本 README 由 Copilot 協助優化。
