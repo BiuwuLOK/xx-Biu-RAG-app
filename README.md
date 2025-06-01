@@ -75,7 +75,8 @@ xx-Biu-reademe-assis-app/
 
 ## 環境建置與安裝
 
-請確保您的系統已安裝 Python 3.8+、Node.js 16+。
+請確保您的系統已安裝 Python 3.8+、Node.js 16+
+ENSURE that your system has Python 3.8+ and Node.js 16+ installed.
 
 ### 前端（React）
 ```bash
@@ -109,7 +110,7 @@ npm run dev # 或 node app.js
 ```
 
 ## 開發建議與最佳實踐
-- 建議加入 `.editorconfig`、`.prettierrc`、`.eslintrc.js` 統一團隊程式碼風格。
+- 加入 `.editorconfig`、`.prettierrc`、`.eslintrc.js` 統一團隊程式碼風格。
 - 建議於 `shared/` 放置共用工具或型別，減少重複。
 - CI/CD 流程可自動執行 lint、test、build 與部署。
 - 各服務可獨立部署、測試與擴展。
