@@ -4,6 +4,8 @@
 
 這是一個基於 Retrieval Augmented Generation (RAG) 的應用程式，支援多後端（FastAPI、Node.js）與 React 前端，並整合 CI/CD 流程。專案採用 monorepo 架構，方便多服務協作與自動化部署。
 
+This is an application based on Retrieval Augmented Generation (RAG), supporting multiple backends (FastAPI, Node.js) and React frontends, and integrating CI/CD processes. The project adopts a monorepo architecture to facilitate multi-service collaboration and automated deployment.
+
 ## Demo
 
 ### 🌟 Try it out 🥳👍 | [Try The Demo](https://gemini.google.com/share/5c9e937d9566)
@@ -19,15 +21,27 @@
 </div>
 
 #### How can you use it in text
-- **專案的主要功能是什麼?**  **專案使用了哪些主要技術?**
-- **專案的架構是怎樣的?**   **專案如何幫助使用者?** 
-- **專案的核心技術是什麼?** 
+- **專案的主要功能是什麼?**  
+  *What are the main features of the project?*  
+- **專案使用了哪些主要技術?**  
+  *What are the main technologies used in the project?*  
+- **專案的架構是怎樣的?**  
+  *What is the architecture of the project?*  
+- **專案如何幫助使用者?**  
+  *How does the project help users?*  
+- **專案的核心技術是什麼?**  
+  *What are the core technologies of the project?*  
 
-* **程式碼功能詢問:** 例如:「這個函數是做什麼的?」，「這個元件的目的是什麼?」
-* **程式碼邏輯詢問:** 例如:「如果輸入是X,程式會如何處理?」，「這個演算法的複雜度是多少?」
-* **專案架構詢問:** 例如:「專案使用了哪些設計模式?」,「前端和後端是如何交互的?」
-* **問題排査:** 例如:「為什麼這個功能無法正常工作?」，「哪裡可能出現了錯誤?」
-* **README 理解:** 例如:「如果README沒有明確說明,你可以詢問專案的依賴關像是什麼?」
+* **程式碼功能詢問:** 例如:「這個函數是做什麼的?」，「這個元件的目的是什麼?」  
+  *Code function questions: e.g., "What does this function do?", "What is the purpose of this component?"*  
+* **程式碼邏輯詢問:** 例如:「如果輸入是X,程式會如何處理?」，「這個演算法的複雜度是多少?」  
+  *Code logic questions: e.g., "If the input is X, how does the program handle it?", "What is the complexity of this algorithm?"*  
+* **專案架構詢問:** 例如:「專案使用了哪些設計模式?」,「前端和後端是如何交互的?」  
+  *Project architecture questions: e.g., "What design patterns are used in the project?", "How do the frontend and backend interact?"*  
+* **問題排査:** 例如:「為什麼這個功能無法正常工作?」，「哪裡可能出現了錯誤?」  
+  *Troubleshooting: e.g., "Why is this feature not working?", "Where might the error occur?"*  
+* **README 理解:** 例如:「如果README沒有明確說明,你可以詢問專案的依賴關像是什麼?」  
+  *README understanding: e.g., "If the README does not clearly state, you can ask what the project dependencies are like?"*
 
 ## 專案結構
 
