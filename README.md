@@ -1,4 +1,4 @@
-# xx-Biu-reademe-assis-app (The RAG Readme App)
+# X. Biu. RAG Readme The App
 
 ## 專案簡介
 
