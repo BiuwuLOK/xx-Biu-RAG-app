@@ -109,28 +109,56 @@ npm run dev # 或 node app.js
 }
 ```
 
-## 開發建議與最佳實踐
-- 加入 `.editorconfig`、`.prettierrc`、`.eslintrc.js` 統一團隊程式碼風格。
-- 建議於 `shared/` 放置共用工具或型別，減少重複。
-- CI/CD 流程可自動執行 lint、test、build 與部署。
-- 各服務可獨立部署、測試與擴展。
-- 建議於根目錄提供 `.env.example`，統一管理環境變數。
+---
 
-## 使用技術
-- **前端**: React, Vite, Tailwind CSS
-- **後端**: Python FastAPI, Node.js (Express/Koa 等)
-- **RAG**: （請補充使用的 RAG 相關庫，如 LangChain, LlamaIndex 等）
-- **資料庫/向量儲存**: （如有請補充）
-- **LLM**: （請補充具體 LLM，如 OpenAI GPT 系列）
+### 開發建議與最佳實踐  
+**Development Suggestions & Best Practices**
 
-## 貢獻
-歡迎對此專案做出貢獻。請先 Fork 本倉庫，創建新分支，提交修改後發起 Pull Request。
+- 加入 .editorconfig、.prettierrc、.eslintrc.js 統一團隊程式碼風格。  
+  Add .editorconfig, .prettierrc, and .eslintrc.js to unify the team's code style.
+- 建議於 shared/ 放置共用工具或型別，減少重複。  
+  It is recommended to place shared utilities or types in the shared/ folder to reduce duplication.
+- CI/CD 流程可自動執行 lint、test、build 與部署。  
+  CI/CD pipelines can automatically run lint, test, build, and deployment tasks.
+- 各服務可獨立部署、測試與擴展。  
+  Each service can be deployed, tested, and scaled independently.
+- 建議於根目錄提供 .env.example，統一管理環境變數。  
+  Provide a .env.example file in the root directory to standardize environment variable management.
 
-## 許可證
-本專案採用 MIT 許可證 - 詳細內容請參閱 [LICENSE](LICENSE)。
+---
 
-## 聯繫方式
-如有任何問題或建議，歡迎聯繫我。
+### 使用技術  
+**Technologies Used**
+
+- 前端: React, Vite, Tailwind CSS  
+- 後端: Python FastAPI, Node.js (Express/Koa 等)  
+- RAG: （請補充使用的 RAG 相關庫，如 LangChain, LlamaIndex 等）  
+- 資料庫/向量儲存: （如有請補充）  
+- LLM: （請補充具體 LLM，如 OpenAI GPT 系列）  
+
+---
+
+### 貢獻  
+**Contribution**
+
+歡迎對此專案做出貢獻。請先 Fork 本倉庫，創建新分支，提交修改後發起 Pull Request。  
+Contributions are welcome! Please fork this repository, create a new branch, and submit your changes via a Pull Request.
+
+---
+
+### 許可證  
+**License**
+
+本專案採用 MIT 許可證 - 詳細內容請參閱 LICENSE。  
+This project is licensed under the MIT License - see the LICENSE file for details.
+
+---
+
+### 聯繫方式  
+**Contact**
+
+如有任何問題或建議，歡迎聯繫我。  
+If you have any questions or suggestions, feel free to contact me.
 
 ---
 
